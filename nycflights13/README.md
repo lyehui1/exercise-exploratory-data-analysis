@@ -2,7 +2,7 @@
 
 ### Load packages
 ```
-library(nycflights13)  # Source: https://cran.r-project.org/web/packages/nycflights13/index.html
+library(nycflights13) 
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
