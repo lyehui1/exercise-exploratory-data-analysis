@@ -61,6 +61,9 @@ df_converted <- select(flights, air_time, arr_time, dep_time) %>%
 )
 df_converted
 ```
+dep_to_arr is now closer to air_time, but there is still a discrepancy.
+Possible explanations are arr_time and dep_time including time at the gate and taxi but not actual takeoff. 
+There may also be data entry errors or unaccounted time difference issues since dep_to_arr is sometimes less than air_time.
 
 ### Display average distance travelled per plane by carrier in 2013
 ```
