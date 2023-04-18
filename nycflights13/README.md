@@ -1,6 +1,6 @@
 # Exploring data: Coding basics and data transformations using the nycflights13 (flights) dataset
 
-### Load packages
+**Load packages**
 ```
 library(nycflights13) 
 library(tidyverse)
@@ -8,34 +8,34 @@ library(dplyr)
 library(ggplot2)
 ```
 
-### View flights dataset structure
+**View flights dataset structure**
 ```
 str(flights)
 ```
 
-### Display flights that had an arrival delay of >2 hours
+**Display flights that had an arrival delay of >2 hours**
 ```
 filter(flights, arr_delay > 120) 
 ```
 
-### Display flights that flew to Houston
+**Display flights that flew to Houston**
 ```
 filter(flights, dest == "HOU")
 ```
 
-### Display flights operated by Delta
+**Display flights operated by Delta**
 ```
 filter(flights, carrier == "DL")
 ```
 
-### Sort to find the fastest flights
+**Sort to find the fastest flights**
 ```
 select(flights, year:day, distance, air_time) %>%
   mutate(speed = distance / air_time * 60) %>%
   arrange(desc(speed))
 ```
 
-### Compare air_time vs. arr_time – dep_time
+**Compare air_time vs. arr_time – dep_time**
 ```
 df <- select(flights, air_time, arr_time, dep_time) %>%
   mutate(df,
@@ -65,7 +65,7 @@ dep_to_arr is now closer to air_time, but there is still a discrepancy.
 Possible explanations are arr_time and dep_time including time at the gate and taxi but not actual takeoff. 
 There may also be data entry errors or unaccounted time difference issues since dep_to_arr is sometimes less than air_time.
 
-### Display average distance travelled per plane by carrier in 2013
+**Display average distance travelled per plane by carrier in 2013**
 ```
 test <- flights %>%
   group_by(carrier) %>%
